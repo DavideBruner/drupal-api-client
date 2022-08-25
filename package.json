@@ -1,0 +1,34 @@
+{
+  "name": "drupal-api-client",
+  "version": "0.0.0",
+  "description": "Simple JS client to use Drupal.org API",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc --build",
+    "test": "jest",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\" --max-warnings=0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavideBruner/drupal-api-client.git"
+  },
+  "keywords": [
+    "drupal",
+    "drupal.org",
+    "drupal-org-api"
+  ],
+  "author": "DavideBruner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavideBruner/drupal-api-client/issues"
+  },
+  "homepage": "https://github.com/DavideBruner/drupal-api-client#readme",
+  "devDependencies": {
+    "@types/querystringify": "^2.0.0",
+    "eslint": "^8.22.0",
+    "isomorphic-fetch": "^3.0.0",
+    "querystringify": "^2.2.0",
+    "typescript": "^4.7.4"
+  }
+}

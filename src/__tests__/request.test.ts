@@ -66,14 +66,20 @@ describe('DrupalApiRequest', () => {
     const service = new DrupalApiRequest({ baseUrl });
     const endpoint = 'api-test';
     const params = {
-      headers: [],
-      method: "PUT",
+      headers: { 'User-Agent': 'test' },
+      method: 'PUT',
       body: JSON.stringify({ test: 'value' })
     }
+    const defaultHeaders = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    };
     const result = await service.execute(endpoint, { init: params });
     expect(result).toStrictEqual(responseMock);
     expect(fetchMock.lastUrl()).toBe(`${baseUrl}/${endpoint}`)
-    expect(fetchMock.lastOptions()).toBe(params)
+    expect(fetchMock.lastOptions()).toStrictEqual(
+      { ...params, headers: { ...defaultHeaders, ...params.headers }}
+    );
   });
 
   test('execute with errors', async () => {

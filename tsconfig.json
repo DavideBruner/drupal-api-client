@@ -18,6 +18,7 @@
     "**/__tests__/*",
     "**/*.spec.ts",
     "**/*.test.ts",
-    "dist"
+    "dist",
+    "examples"
   ]
 }
